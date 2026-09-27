@@ -1,0 +1,13 @@
+[Unit]
+Description=Maas Service
+Requires=postgresql.service
+
+[Service]
+User=ubuntu
+WorkingDirectory=/var/cache/maas
+ExecStartPre=rm -f /tmp/maas.sock
+ExecStart=/usr/local/bin/maas -s3 -s3config /etc/maas-s3.json -tmpdir /var/cache/maas -unixsocket /tmp/maas.sock -role "*" -role admin -role leader -role manager -role director -role root -pubkeyfile /etc/postgrest/ea.pub
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+{
+	"key": "AKIA...",
+	"secret": "...",
+	"provider": "s3.amazonaws.com",
+	"bucket": "wri-public-data",
+	"directory": "EnergyAccess/uploads",
+	"acl": "public-read"
+}
